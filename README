@@ -1,5 +1,9 @@
 Two small utilities, which makes it possible to switch ambient light sensors on or off.
-Also desktop notififactions are supported.
+Also desktop notififactions through libnotify are supported.
+
+Works on Notebooks like
+- HP EliteBook 8560p
+- maybe others...
 
 Using:
 
