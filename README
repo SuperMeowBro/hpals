@@ -1,1 +1,7 @@
+Two small utilities, which makes it possible to switch ambient light sensors on or off.
+Also desktop notififactions are supported.
 
+Using:
+
+- Build & Install
+- Execute "hpals_client" to switch ALS on or off
