@@ -59,12 +59,12 @@ static void on_notify(void *data EINA_UNUSED, const Eldbus_Message *msg, Eldbus_
     char rid_str[128];
     eina_convert_itoa(rid, rid_str);
 
-        Eet_File *eet_file;
-        eet_file = eet_open("/var/lib/hpals", EET_FILE_MODE_WRITE);
-        if (eet_file != NULL) {
-            eet_write(eet_file, "rid", rid_str, strlen(rid_str) + 1, 0);
-            eet_close(eet_file);
-        }
+    Eet_File *eet_file;
+    eet_file = eet_open("/tmp/hpals", EET_FILE_MODE_WRITE);
+    if (eet_file != NULL) {
+        eet_write(eet_file, "rid", rid_str, strlen(rid_str) + 1, 0);
+        eet_close(eet_file);
+    }
 
     ecore_main_loop_quit();
 }
@@ -93,7 +93,7 @@ static unsigned int read_rid_from_file() {
     char *rid_str, *ptr;
     unsigned int rid_conv = 0;
 
-    Eet_File *eet_file = eet_open("/var/lib/hpals", EET_FILE_MODE_READ);
+    Eet_File *eet_file = eet_open("/tmp/hpals", EET_FILE_MODE_READ);
     if (eet_file != NULL) {
         rid_str = eet_read(eet_file, "rid", &size);
         // Todo: Konvertierung überarbeiten.

@@ -31,6 +31,6 @@ package() {
   make DESTDIR="${pkgdir}" install
 
   # install license files
-  install -d "${pkgdir}/usr/share/licenses/${pkgname}/"
+  install -d "${pkgdir}/usr/share/licenses/${_pkgname}/"
   install -m644 -t "${pkgdir}/usr/share/licenses/${_pkgname}/" AUTHORS COPYING
 }
