@@ -1,0 +1,5 @@
+# /usr/share/dbus-1/system-services/org.hpals.als.service
+[D-BUS Service]
+Name=org.hpals.als
+User=root
+Exec=/usr/bin/hpals_service

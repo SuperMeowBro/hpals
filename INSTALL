@@ -1,0 +1,10 @@
+Dependencies:
+- EFL (Eldbus, Ecore, Eeze, Eet, Eina)
+- libnotify
+
+Installation procedure:
+$ mkdir build
+$ cd build/
+$ cmake ..
+$ make
+$ make install

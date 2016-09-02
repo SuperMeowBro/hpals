@@ -1,0 +1,42 @@
+# Maintainer: Alexander Wecker <r34gzilla@gmail.com>
+# Contributor: Alexander Wecker <r34gzilla@gmail.com>
+
+pkgname=hpals
+[[ -d ../.git ]] && pkgname=('hpals-git')
+pkgver=0.1
+pkgrel=1
+pkgdesc="Two small utilities, which makes it possible to switch ambient light sensors on or off. Root privileges are not required."
+arch=('i686' 'x86_64')
+url="https://github.com/r34gzilla/hpals"
+license=('GPL2')
+depends=('efl' 'libnotify' 'dbus')
+makedepends=('cmake')
+[[ -d ../.git ]] && makedepends+=('git')
+provides=("$pkgname=$pkgver")
+conflicts=("$pkgname")
+source=("https://git.github.com/r34gzilla/$pkgname.git")
+sha256sums=('SKIP')
+
+prepare() {
+	cd "${srcdir}/${pkgname}-${pkgver}"
+}
+
+build() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+
+  ./configure \
+    --prefix=/usr \
+    --disable-static
+
+  make
+}
+
+package() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+
+  make DESTDIR="${pkgdir}" install
+
+# install license files
+  install -d "${pkgdir}/usr/share/licenses/${pkgname}/"
+  install -m644 -t "${pkgdir}/usr/share/licenses/${pkgname}/" AUTHORS COPYING
+}
