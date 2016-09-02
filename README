@@ -5,7 +5,21 @@ Works on Notebooks like
 - HP EliteBook 8560p
 - maybe others...
 
-Using:
+Dependencies:
+- EFL (Eldbus, Ecore, Eeze, Eet, Eina)
+- libnotify
 
-- Build & Install
-- Execute "hpals_client" to switch ALS on or off
+Build & Install:
+$ mkdir build
+$ cd build/
+$ cmake ..
+$ make
+$ make install
+
+or on Archlinux:
+$ cd packaging/
+$ makepkg
+$ pacman -U <pkgname>
+
+Use:
+$ hpals_client (to toggle ALS)
