@@ -1,5 +1,5 @@
 Two small utilities, which makes it possible to switch ambient light sensors on or off.
-Also desktop notififactions through libnotify are supported.
+Also desktop notififactions are supported.
 
 Works on Notebooks like
 - HP EliteBook 8560p
@@ -7,7 +7,9 @@ Works on Notebooks like
 
 Dependencies:
 - EFL (Eldbus, Ecore, Eeze, Eet, Eina)
-- libnotify
+
+Requires (for desktop notifications only):
+- notification-daemon
 
 Build & Install:
 $ mkdir build
