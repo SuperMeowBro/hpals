@@ -1,10 +1,17 @@
 Dependencies:
 - EFL (Eldbus, Ecore, Eeze, Eet, Eina)
-- libnotify
 
-Installation procedure:
+Requires (for desktop notifications only):
+- notification-daemon
+
+Build & Install:
 $ mkdir build
 $ cd build/
 $ cmake ..
 $ make
 $ make install
+
+or on Archlinux:
+$ cd packaging/
+$ makepkg
+$ pacman -U <pkgname>

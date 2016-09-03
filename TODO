@@ -1,1 +1,3 @@
-
+Todo: Brightness-Icon verwenden
+Todo: Lokalisierung aller Strings mittels gettext()
+Todo: Fehlerbehandlung ergänzen

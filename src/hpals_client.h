@@ -5,7 +5,14 @@
 #ifndef HPALS_HPALS_CLIENT_H
 #define HPALS_HPALS_CLIENT_H
 
+#include <Eina.h>
+#include <Eet.h>
 #include <Eldbus.h>
+#include <Ecore.h>
+//#include <libintl.h>
+//#include <locale.h>
+
+//#define _(STRING) gettext(STRING)
 
 #define NOTIFICATIONS_BUS "org.freedesktop.Notifications"
 #define NOTIFICATIONS_PATH "/org/freedesktop/Notifications"
@@ -14,6 +21,8 @@
 #define HPALS_BUS "org.hpals.als"
 #define HPALS_PATH "/org/hpals/als"
 #define HPALS_INTERFACE "org.hpals.als"
+
+#define RID_FILE "/tmp/hpals"
 
 static void on_toggle_on_off(void *data EINA_UNUSED, const Eldbus_Message *msg, Eldbus_Pending *pending EINA_UNUSED);
 
